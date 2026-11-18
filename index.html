@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>North India: Desert to Snow · 14-Day Tour | Voyage Adventures</title>
+  
+  <!-- Typography: Instrument Serif, Inter, Oswald -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){
+      var s = localStorage.getItem("voyage_theme");
+      var d = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", s || (d ? "dark" : "light"));
+    })();
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Bar Navigation (Sticky) -->
+    <header class="top-bar">
+      <a class="brand-logo" href="#top">Voyage Adventures</a>
+      
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#route">Route</a>
+        <a href="#plan">Day by day</a>
+        <a href="#food">Food menu</a>
+        <a href="#costs">Costs</a>
+        <a href="#notes">Before you go</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle (Dark / Light Mode) -->
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Switch theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-label">Theme</span>
+        </button>
+
+        <button type="button" class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Open menu" aria-expanded="false">
+          <span>Menu</span> &#9776;
+        </button>
+        <a class="btn" href="tel:+918590927242" aria-label="Call Voyage Adventures at +91 85909 27242">Call us</a>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-header">
+          <span class="mobile-nav-title">Voyage Adventures</span>
+          <button type="button" class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="#route">Route</a>
+          <a href="#plan">Day by day</a>
+          <a href="#food">Food menu</a>
+          <a href="#costs">Costs</a>
+          <a href="#notes">Before you go</a>
+          <a href="#contact">Contact</a>
+          <a class="btn" href="tel:+918590927242" style="margin-top: 1.25rem; justify-content: center;">Call us (+91 85909 27242)</a>
+        </nav>
+        <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-size: 0.92rem; color: var(--mute);">Theme Mode</span>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+            <span class="theme-icon" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main id="top">
+      <!-- Visually Hidden H1 for Accessible Outline -->
+      <h1 class="sr-only">North India, desert to snow. Fourteen days from Kozhikode to Ahmedabad, Jaisalmer, Delhi, Manali, Kasol, Grahan and Agra.</h1>
+
+      <!-- Section 3: Full-Screen Destination Hero Slider -->
+      <section style="padding-top: 0.25rem; padding-bottom: 0;">
+        <div class="slider-wrapper" id="hero-slider" tabindex="0" role="region" aria-roledescription="carousel" aria-label="North India Tour Destinations">
+          <!-- Background Cross-fade Layers -->
+          <div class="slider-bgs" id="slider-bgs" aria-hidden="true"></div>
+          
+          <!-- Legibility Scrim Overlay -->
+          <div class="slider-scrim" aria-hidden="true"></div>
+
+          <!-- 6.5s Progress Bar -->
+          <div class="slider-progress" aria-hidden="true">
+            <span class="slider-progress-bar" id="slider-progress-bar"></span>
+          </div>
+
+          <!-- Hero UI Layer -->
+          <div class="slider-ui">
+            <!-- Left Copy Column -->
+            <div class="slider-copy" id="slider-copy" aria-live="polite">
+              <span class="slider-tag" id="slider-tag"></span>
+              <h2 class="slider-title" id="slider-title"></h2>
+              <p class="slider-desc" id="slider-desc"></p>
+              
+              <div class="slider-cta">
+                <a class="btn btn-hero-primary" href="#plan">See the plan</a>
+                <a class="btn btn-hero-secondary" href="north-india-itinerary.pdf" download>Download PDF</a>
+              </div>
+            </div>
+
+            <!-- Right Bottom Rotating Thumbnails -->
+            <div class="slider-thumbs" id="slider-thumbs" role="group" aria-label="Other destinations in the tour"></div>
+
+            <!-- Bottom Controls & Counter -->
+            <div class="slider-footer">
+              <div class="slider-controls">
+                <button type="button" class="slider-arrow-btn" id="slider-prev-btn" aria-label="Previous destination">&#8249;</button>
+                <button type="button" class="slider-arrow-btn" id="slider-next-btn" aria-label="Next destination">&#8250;</button>
+              </div>
+              <span class="slider-counter" id="slider-counter" aria-label="Current slide">01 / 06</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5.1: The Shape of the Trip -->
+      <section id="route">
+        <h2>The shape of the trip</h2>
+        <p class="section-intro">Five states, four train journeys and two overnight buses. Nights are spent in a desert camp, a Manali hotel, a riverside camp at Kasol, a village homestay at Grahan and a Delhi hotel. Rooms are quad sharing.</p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <b>14</b>
+            <span>days</span>
+          </div>
+          <div class="stat-card">
+            <b>5</b>
+            <span>states</span>
+          </div>
+          <div class="stat-card">
+            <b>5</b>
+            <span>stays</span>
+          </div>
+          <div class="stat-card">
+            <b>4</b>
+            <span>train journeys</span>
+          </div>
+          <div class="stat-card">
+            <b>2</b>
+            <span>overnight buses</span>
+          </div>
+        </div>
+
+        <ol class="route-trail" aria-label="Trip Route Progression">
+          <li><span class="route-pill">Kozhikode</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Ahmedabad</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Jaisalmer</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Delhi</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Manali</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Kasol</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Grahan</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Delhi</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Agra</span><span class="route-arrow" aria-hidden="true">&rarr;</span></li>
+          <li><span class="route-pill">Kozhikode</span></li>
+        </ol>
+      </section>
+
+      <!-- Section 5.2: Day by Day -->
+      <section id="plan">
+        <div class="section-header-bar">
+          <div>
+            <h2>Day by day</h2>
+            <p class="section-intro" style="margin-bottom: 0;">Tap a day to open it. Filled chips show the meals included.</p>
+          </div>
+          <button type="button" class="btn btn-ghost" id="toggle-all-days">Open all days</button>
+        </div>
+
+        <div class="day-accordion-list" id="days-container">
+          <!-- Rendered dynamically from daysData in script.js -->
+        </div>
+      </section>
+
+      <!-- Section: Food Menu -->
+      <section id="food">
+        <h2>Food menu</h2>
+        <p class="section-intro">Quick meal breakdown for every day of the tour. 21 group meals are included in total.</p>
+
+        <!-- Meal Stats Summary -->
+        <div class="stats-grid" style="margin-bottom: 1.5rem;">
+          <div class="stat-card">
+            <b>21</b>
+            <span>meals included</span>
+          </div>
+          <div class="stat-card">
+            <b>8</b>
+            <span>breakfasts</span>
+          </div>
+          <div class="stat-card">
+            <b>5</b>
+            <span>lunches</span>
+          </div>
+          <div class="stat-card">
+            <b>8</b>
+            <span>dinners</span>
+          </div>
+        </div>
+
+        <!-- Clean Daily Meal Inclusion Table -->
+        <div class="table-scroll-wrapper" tabindex="0" role="region" aria-label="Daily Meal Inclusion Matrix">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col" style="min-width: 110px;">Day</th>
+                <th scope="col" style="min-width: 220px;">Place / Route</th>
+                <th scope="col" style="text-align: center; min-width: 110px;">Breakfast</th>
+                <th scope="col" style="text-align: center; min-width: 110px;">Lunch</th>
+                <th scope="col" style="text-align: center; min-width: 110px;">Dinner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Day 1</strong></td>
+                <td>Kozhikode to Ahmedabad (Train)</td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 2</strong></td>
+                <td>Ahmedabad</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 3</strong></td>
+                <td>Jaisalmer (Desert Camp)</td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 4</strong></td>
+                <td>Jaisalmer (Golden City)</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 5</strong></td>
+                <td>Delhi to Manali (Bus)</td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 6</strong></td>
+                <td>Manali</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 7</strong></td>
+                <td>Manali to Kasol</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 8</strong></td>
+                <td>Grahan Village</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 9</strong></td>
+                <td>Kasol to Delhi</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 10</strong></td>
+                <td>Delhi</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+              </tr>
+              <tr>
+                <td><strong>Day 11</strong></td>
+                <td>Agra</td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-included">Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>Days 12–14</strong></td>
+                <td>Delhi to Kozhikode (Train)</td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+                <td style="text-align: center;"><span class="meal-badge is-excluded">Excluded</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5.3: Costs -->
+      <section id="costs">
+        <h2>Costs</h2>
+        <p class="section-intro">Everything below is arranged and paid for before you leave.</p>
+
+        <!-- Large Total Package Card -->
+        <div class="costs-total-card">
+          <div class="costs-total-left">
+            <span class="total-label">Total package</span>
+            <div class="total-amount">₹17,980</div>
+          </div>
+          <dl class="costs-breakdown">
+            <div class="costs-breakdown-row">
+              <dt>Package price</dt>
+              <dd>₹15,100</dd>
+            </div>
+            <div class="costs-breakdown-row">
+              <dt>Train ticket</dt>
+              <dd>₹2,730</dd>
+            </div>
+            <div class="costs-breakdown-row">
+              <dt>Teachers’ addition</dt>
+              <dd>₹150</dd>
+            </div>
+            <div class="costs-breakdown-row">
+              <dt>Train subtotal</dt>
+              <dd>₹2,880</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Train Fares Table -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; margin: 2.2rem 0 0.8rem 0;">Train fares, Sleeper class (₹ per person)</h3>
+        <div class="table-scroll-wrapper" tabindex="0" role="region" aria-label="Train Fares Table">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">Route</th>
+                <th scope="col" class="num-col">Sleeper fare</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kozhikode to Ahmedabad</td>
+                <td class="num-col">780</td>
+              </tr>
+              <tr>
+                <td>Ahmedabad to Jaisalmer</td>
+                <td class="num-col">455</td>
+              </tr>
+              <tr>
+                <td>Jaisalmer to Delhi</td>
+                <td class="num-col">460</td>
+              </tr>
+              <tr>
+                <td>Delhi to Kozhikode (Mangala Lakshadweep Express)</td>
+                <td class="num-col">1,035</td>
+              </tr>
+              <tr style="font-weight: 600; background: var(--bg-subtle);">
+                <td>Total</td>
+                <td class="num-col">2,730</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Side-by-Side Included / Not Included Panels -->
+        <div class="two-panel-grid">
+          <div class="panel-card">
+            <h3>Included</h3>
+            <ul class="panel-list">
+              <li>Quad-sharing stays: desert camp, Manali hotel, Kasol camp, Grahan homestay, Delhi hotel.</li>
+              <li>Freshen-up rooms in Ahmedabad and Delhi.</li>
+              <li>AC pushback bus, Sumo vehicles in Manali, two-way off-road vehicle for Grahan, one-side electric vehicle to the Taj Mahal.</li>
+              <li>All tolls, tax permits and mineral water on the bus.</li>
+              <li>All entry tickets, guide, permits and the meals marked on each day.</li>
+              <li>Jeep and camel safari, cultural programme, campfire, DJ and pool in Jaisalmer.</li>
+              <li>Barbecue, campfire and live techno DJ in Kasol.</li>
+              <li>Complimentary arrangements for staff.</li>
+            </ul>
+          </div>
+
+          <div class="panel-card">
+            <h3>Not included</h3>
+            <ul class="panel-list">
+              <li>Airfare or transport beyond the plan.</li>
+              <li>Travel insurance.</li>
+              <li>Medical emergencies or other unforeseen costs (help will be given).</li>
+              <li>Weather, landslide, roadblock or unrest costs.</li>
+              <li>Tips, calls, laundry, beverages.</li>
+              <li>Taj Mahal museum ticket.</li>
+              <li>Paragliding, rafting and other extra activities.</li>
+              <li>Food outside marked meals, including Israeli food in Kasol and the Jama Masjid food street.</li>
+              <li>Snow jacket, if needed.</li>
+              <li>GST, where applicable.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cancellation Policy -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400; margin: 2.2rem 0 0.4rem 0;">Cancellation</h3>
+        <p class="section-intro" style="margin-bottom: 0.85rem;">Counted from the scheduled departure date. Rail bookings for a group are made well in advance, so the later bands are steep.</p>
+        
+        <div class="table-scroll-wrapper" tabindex="0" role="region" aria-label="Cancellation Policy Table">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">When you cancel</th>
+                <th scope="col" class="num-col">Deducted from package cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>16 days or more before departure</td>
+                <td class="num-col">20–30%</td>
+              </tr>
+              <tr>
+                <td>15 to 7 days before</td>
+                <td class="num-col">50–60%</td>
+              </tr>
+              <tr>
+                <td>6 to 3 days before</td>
+                <td class="num-col">75–85%</td>
+              </tr>
+              <tr>
+                <td>No show at departure</td>
+                <td class="num-col">100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5.4: Download PDF Band -->
+      <section id="download" style="padding-top: 1rem;">
+        <div class="pdf-download-band">
+          <div>
+            <h3>Full itinerary PDF</h3>
+            <p>Download the complete brochure to keep or share.</p>
+          </div>
+          <a class="btn" href="north-india-itinerary.pdf" download>Download PDF</a>
+        </div>
+      </section>
+
+      <!-- Section 5.5: Before You Go -->
+      <section id="notes">
+        <h2>Before you go</h2>
+        <p class="section-intro">Desert camp, Himalayan pass and the Taj Mahal in one fortnight. Pack one main bag plus a small day bag.</p>
+
+        <div class="cards-auto-grid">
+          <div class="guide-card">
+            <h3>Clothing</h3>
+            <p>Layers for hot days and cold nights, a jacket or sweater for Manali, Kasol and Grahan, and comfortable walking shoes or hiking boots.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Weather</h3>
+            <p>Raincoat or umbrella, hat or cap, sunglasses and sunscreen.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Documents</h3>
+            <p>Valid photo ID, college ID, cash and a debit or credit card.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Everyday</h3>
+            <p>Phone and charger, power bank, toiletries, personal medication and a small first-aid kit.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Cash</h3>
+            <p>ATMs are easy in Ahmedabad, Jaisalmer, Delhi, Manali and Agra, and hard at the desert camp and in Grahan. Carry enough for two days at a time.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Signal</h3>
+            <p>Coverage is patchy on the dunes, in the Parvati Valley and on overnight road legs. Agree a meeting point before the group splits up.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Altitude</h3>
+            <p>Sissu and Koksar sit at about 3,100 m and Grahan at about 2,300 m. Move slowly, drink water, and tell the tour lead if you feel light-headed.</p>
+          </div>
+
+          <div class="guide-card">
+            <h3>Timing</h3>
+            <p>Trains and buses will not wait. The reporting times given by the tour lead are the real times.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5.6: Contact Us -->
+      <section id="contact">
+        <h2>Contact us</h2>
+        <p class="section-intro">Call or message for bookings and questions.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-name">Sanood</div>
+            <div class="contact-role">Adventure Voyage</div>
+            <a class="contact-phone-link" href="tel:+918590927242">85909 27242</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-name">Abhinav</div>
+            <div class="contact-role">Coordinator</div>
+            <a class="contact-phone-link" href="tel:+918078726812">80787 26812</a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-name">Devika</div>
+            <div class="contact-role">Coordinator</div>
+            <a class="contact-phone-link" href="tel:+918281250695">82812 50695</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5.7: Credit Line -->
+      <p class="credit-line">Done by Abhinav</p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Voyage Adventures · North India · GEC Wayanad EC</span>
+      <span><a href="tel:+918590927242">85909 27242</a> · adventure_voyage</span>
+    </div>
+  </footer>
+</body>
+</html>
